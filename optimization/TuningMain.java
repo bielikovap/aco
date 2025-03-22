@@ -34,7 +34,7 @@ public class TuningMain {
             ACOTuner tuner = new ACOTuner(useky, turnusy, 
                 40.0,  
                 10.0,  
-                0.0023,
+                0.0013,
                 0.0026 
             );
 

@@ -5,15 +5,15 @@ import model.Usek;
 import java.util.*;
 
 public class ACOOptimizer {
-    private int NUM_ANTS = 50;              
-    private int MAX_ITERATIONS = 1000;       
-    private double ALPHA = 0.1;             
-    private double BETA = 5.0;              
-    private double RHO = 0.8;              
-    private double Q = 10.0;             
-    private double TAU_0 = 0.001;            
-    private double P_0 = 0.2;               
-    private int ELITE_SOLUTIONS = 5;
+    private int NUM_ANTS = 50;             // Number of ants (N)         
+    private int MAX_ITERATIONS = 1000;     // Max iterations    
+    private double ALPHA = 1.0;            // α - Pheromone influence 
+    private double BETA = 5.0;             // β - Heuristic influence   
+    private double RHO = 0.8;              // ρ - Pheromone evaporation  
+    private double Q = 10.0;               // Q - Pheromone deposit  
+    private double TAU_0 = 0.001;          // τ₀ - Initial pheromone   
+    private double P_0 = 0.01;              // p₀ - Exploration probability   
+    private int ELITE_SOLUTIONS = 5;       // Elite solutions  
 
     private final List<Usek> useky;
     private final List<Turnus> turnusy;
@@ -114,11 +114,7 @@ public class ACOOptimizer {
                 solution.add(random.nextBoolean());
             } else {
                 double usageFrequency = segmentUsage.getOrDefault(i, 0) / (double) maxUsage;
-                
-                double maxDistance = useky.stream().mapToDouble(Usek::getDistance).max().orElse(1.0);
-                double distanceFactor = 1.0 - (currentUsek.getDistance() / maxDistance);
-                
-                double heuristicValue = (usageFrequency + distanceFactor) / 1.4;
+                double heuristicValue = usageFrequency / currentUsek.getDistance();
                 
                 double p1 = Math.pow(pheromones[i][1], ALPHA) * Math.pow(heuristicValue, BETA);
                 double p0 = Math.pow(pheromones[i][0], ALPHA) * Math.pow(1.0/heuristicValue, BETA);
