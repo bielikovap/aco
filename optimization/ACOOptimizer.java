@@ -5,15 +5,15 @@ import model.Usek;
 import java.util.*;
 
 public class ACOOptimizer {
-    private int NUM_ANTS = 50;             // Number of ants (N)         
+    private int NUM_ANTS = 50;             // Number of ants (N)        
     private int MAX_ITERATIONS = 1000;     // Max iterations    
-    private double ALPHA = 1.0;            // α - Pheromone influence 
-    private double BETA = 5.0;             // β - Heuristic influence   
+    private double ALPHA = 1.0;            // α - Pheromone influence
+    private double BETA = 5.0;             // β - Heuristic influence  
     private double RHO = 0.8;              // ρ - Pheromone evaporation  
     private double Q = 10.0;               // Q - Pheromone deposit  
-    private double TAU_0 = 0.001;          // τ₀ - Initial pheromone   
-    private double P_0 = 0.01;              // p₀ - Exploration probability   
-    private int ELITE_SOLUTIONS = 5;       // Elite solutions  
+    private double TAU_0 = 0.001;          // τ₀ - Initial pheromone  
+    private double P_0 = 0.01;              // p₀ - Exploration probability  
+    private int ELITE_SOLUTIONS = 10;       // Elite solutions  
 
     private final List<Usek> useky;
     private final List<Turnus> turnusy;
@@ -21,7 +21,7 @@ public class ACOOptimizer {
     private final double minBatteryLevel;
     private final double consumptionRate;
     private final double chargingRate;
-    
+   
     private double[][] pheromones;
     private List<Boolean> bestSolution;
     private double bestSolutionLength;
@@ -53,7 +53,7 @@ public class ACOOptimizer {
         bestSolutionLength = Double.MAX_VALUE;
         List<List<Boolean>> eliteSolutions = new ArrayList<>();
         List<Double> eliteLengths = new ArrayList<>();
-        
+       
         for (int iteration = 0; iteration < MAX_ITERATIONS; iteration++) {
             List<List<Boolean>> antSolutions = new ArrayList<>();
             List<Double> solutionLengths = new ArrayList<>();
@@ -64,7 +64,7 @@ public class ACOOptimizer {
                     double length = calculateTotalLength(solution);
                     antSolutions.add(solution);
                     solutionLengths.add(length);
-                    
+                   
                     updateEliteSolutions(solution, length, eliteSolutions, eliteLengths);
                 }
             }
@@ -75,9 +75,17 @@ public class ACOOptimizer {
                 if (length < bestSolutionLength) {
                     bestSolutionLength = length;
                     bestSolution = new ArrayList<>(antSolutions.get(bestIndex));
+                    List<Boolean> improvedSolution = localSearch(bestSolution);
+                    if (isValidSolution(improvedSolution)) {
+                        double improvedLength = calculateTotalLength(improvedSolution);
+                        if (improvedLength < bestSolutionLength) {
+                            bestSolutionLength = improvedLength;
+                            bestSolution = improvedSolution;
+                        }
+                    }
                 }
             }
-            
+           
             evaporatePheromones();
             for (int i = 0; i < antSolutions.size(); i++) {
                 updatePheromones(antSolutions.get(i), solutionLengths.get(i));
@@ -94,14 +102,14 @@ public class ACOOptimizer {
     private List<Boolean> constructSolution() {
         List<Boolean> solution = new ArrayList<>();
         Random random = new Random();
-        
+       
         Map<Integer, Integer> segmentUsage = new HashMap<>();
         for (Turnus turnus : turnusy) {
             for (Integer usekIndex : turnus.getUskyIndices()) {
                 segmentUsage.merge(usekIndex, 1, Integer::sum);
             }
         }
-        
+       
         int maxUsage = segmentUsage.values().stream()
             .mapToInt(Integer::intValue)
             .max()
@@ -109,17 +117,17 @@ public class ACOOptimizer {
 
         for (int i = 0; i < useky.size(); i++) {
             Usek currentUsek = useky.get(i);
-            
+           
             if (random.nextDouble() < P_0) {
                 solution.add(random.nextBoolean());
             } else {
                 double usageFrequency = segmentUsage.getOrDefault(i, 0) / (double) maxUsage;
                 double heuristicValue = usageFrequency / currentUsek.getDistance();
-                
+               
                 double p1 = Math.pow(pheromones[i][1], ALPHA) * Math.pow(heuristicValue, BETA);
                 double p0 = Math.pow(pheromones[i][0], ALPHA) * Math.pow(1.0/heuristicValue, BETA);
                 double sum = p0 + p1;
-                
+               
                 if (sum == 0) {
                     solution.add(random.nextBoolean());
                 } else {
@@ -138,12 +146,12 @@ public class ACOOptimizer {
             double currentBattery = maxBatteryCapacity;
             double distanceWithoutCharging = 0;
             List<Integer> uskyIndices = turnus.getUskyIndices();
-            
+           
             for (int i = 0; i < uskyIndices.size(); i++) {
                 int usekIndex = uskyIndices.get(i);
                 Usek usek = useky.get(usekIndex);
                 double distance = usek.getDistance();
-                
+               
                 if (currentBattery - (distance * consumptionRate) < minBatteryLevel ||
                     distanceWithoutCharging + distance > (maxBatteryCapacity - minBatteryLevel) / consumptionRate) {
                     solution.set(usekIndex, true);
@@ -159,7 +167,7 @@ public class ACOOptimizer {
 
     private boolean isValidSolution(List<Boolean> solution) {
          for (Turnus turnus : turnusy) {
-            if (!turnus.isValidBatteryState(useky, solution, maxBatteryCapacity, 
+            if (!turnus.isValidBatteryState(useky, solution, maxBatteryCapacity,
                                           consumptionRate, chargingRate)) {
                 return false;
             }
@@ -211,6 +219,82 @@ public class ACOOptimizer {
             solution.add(true);
         }
         return solution;
+    }
+
+    private List<Boolean> localSearch(List<Boolean> solution) {
+        List<Boolean> bestSolution = new ArrayList<>(solution);
+        double bestLength = calculateTotalLength(solution);
+        int maxRadius = 5;  
+        int maxIterationsWithoutImprovement = 100;  
+        int iterationsWithoutImprovement = 0;
+        Random random = new Random();
+        double minImprovement = 0.01; 
+        
+        while (iterationsWithoutImprovement < maxIterationsWithoutImprovement) {
+            boolean improved = false;
+            
+            for (int i = 0; i < useky.size() - maxRadius; i += maxRadius) {
+                List<Boolean> neighbor = new ArrayList<>(bestSolution);
+                int removedCount = 0;
+                
+                for (int r = 0; r < maxRadius; r++) {
+                    int idx = (i + r) % useky.size();
+                    if (neighbor.get(idx) && random.nextDouble() < 0.5) {
+                        neighbor.set(idx, false);
+                        removedCount++;
+                    }
+                }
+                
+                if (removedCount > 0 && isValidSolution(neighbor)) {
+                    double length = calculateTotalLength(neighbor);
+                    if (length < bestLength * (1 - minImprovement)) {
+                        bestSolution = new ArrayList<>(neighbor);
+                        bestLength = length;
+                        improved = true;
+                    }
+                }
+            }
+            
+            for (Turnus turnus : turnusy) {
+                double batteryLevel = maxBatteryCapacity;
+                List<Integer> criticalPoints = new ArrayList<>();
+                
+                for (Integer usekIndex : turnus.getUskyIndices()) {
+                    double distance = useky.get(usekIndex).getDistance();
+                    batteryLevel -= distance * consumptionRate;
+                    
+                    if (batteryLevel < maxBatteryCapacity * 0.3) { 
+                        criticalPoints.add(usekIndex);
+                    }
+                    
+                    if (bestSolution.get(usekIndex)) {
+                        batteryLevel = maxBatteryCapacity;
+                    }
+                }
+                
+                for (Integer point : criticalPoints) {
+                    List<Boolean> neighbor = new ArrayList<>(bestSolution);
+                    neighbor.set(point, true);
+                    
+                    if (isValidSolution(neighbor)) {
+                        double length = calculateTotalLength(neighbor);
+                        if (length < bestLength) {
+                            bestSolution = neighbor;
+                            bestLength = length;
+                            improved = true;
+                        }
+                    }
+                }
+            }
+            
+            if (improved) {
+                iterationsWithoutImprovement = 0;
+            } else {
+                iterationsWithoutImprovement++;
+            }
+        }
+        
+        return isValidSolution(bestSolution) ? bestSolution : solution;
     }
 
     public void setNumAnts(int value) { this.NUM_ANTS = value; }

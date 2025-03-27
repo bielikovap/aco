@@ -11,8 +11,8 @@ public class TuningMain {
         try {
             long startTime = System.currentTimeMillis();
             
-            String usekyPath = "C:/Users/petro/Downloads/dataUseky/data/B1_useky.csv";  
-            String turnusyPath = "C:/Users/petro/Downloads/dataUseky/data/B1_turnusy.csv"; 
+            String usekyPath = "C:/Users/petro/Downloads/dataUseky/data/T2_useky.csv";  
+            String turnusyPath = "C:/Users/petro/Downloads/dataUseky/data/T2_turnusy.csv"; 
             
             File uskyFile = new File(usekyPath);
             File turnsyFile = new File(turnusyPath);
