@@ -305,4 +305,13 @@ public class ACOOptimizer {
     public void setQ(double value) { this.Q = value; }
     public void setTau0(double value) { this.TAU_0 = value; }
     public void setP0(double value) { this.P_0 = value; }
+
+    public int getNumAnts() { return NUM_ANTS; }
+    public int getMaxIterations() { return MAX_ITERATIONS; }
+    public double getAlpha() { return ALPHA; }
+    public double getBeta() { return BETA; }
+    public double getRho() { return RHO; }
+    public double getQ() { return Q; }
+    public double getTau0() { return TAU_0; }
+    public double getP0() { return P_0; }
 }

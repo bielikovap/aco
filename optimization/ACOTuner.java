@@ -15,13 +15,13 @@ public class ACOTuner {
    
     private static final int REPLICATIONS = 10;
    
-private int bestNumAnts = 75;
+private int bestNumAnts = 40;
     private int bestMaxIterations = 1500;
-    private double bestAlpha = 1.5;
-    private double bestBeta = 1.0;
-    private double bestRho = 0.8;
-    private double bestQ = 250.0;
-    private double bestTau0 = 0.001;
+    private double bestAlpha = 0.5;
+    private double bestBeta = 10.0;
+    private double bestRho = 0.5;
+    private double bestQ = 100.0;
+    private double bestTau0 = 0.01;
     private double bestP0 = 0.1;
    
     public ACOTuner(List<Usek> useky, List<Turnus> turnusy,
@@ -232,8 +232,8 @@ private int bestNumAnts = 75;
                          value -> setRho(value));
             tuneParameter("TAU_0", new double[]{0.001, 0.01, 0.1, 0.25, 0.5, 0.75, 1.0},
                          value -> setTau0(value));
-            //tuneParameter("MAX_ITERATIONS", new int[]{500, 750, 1000, 1500, 2000, 3000},
-            //          value -> setMaxIterations(value));
+            tuneParameter("MAX_ITERATIONS", new int[]{500, 750, 1000, 1500, 2000, 3000},
+                      value -> setMaxIterations(value));
 
             System.out.println("\n=================================");
             System.out.println("Parameter tuning complete!");

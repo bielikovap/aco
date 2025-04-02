@@ -8,9 +8,9 @@ import java.util.List;
 import model.Usek;
 
 public class CSVTuningLogger {
-    private static final String SUMMARY_FILE = "d:\\uniza\\bakalarka_1\\T2_summary.csv";
-    private static final String RUNS_FILE = "d:\\uniza\\bakalarka_1\\T2_runs.csv";
-    private static final String BEST_SOLUTION_FILE = "d:\\uniza\\bakalarka_1\\T2_best_solution.csv";
+    private static final String SUMMARY_FILE = "d:\\uniza\\bakalarka_1\\B2_summary.csv";
+    private static final String RUNS_FILE = "d:\\uniza\\bakalarka_1\\B2_runs.csv";
+    private static final String BEST_SOLUTION_FILE = "d:\\uniza\\bakalarka_1\\B2_best_solution.csv";
     
     public static void initializeFiles(double alpha, double beta, double rho, 
                                      double q, double tau0, double p0, 

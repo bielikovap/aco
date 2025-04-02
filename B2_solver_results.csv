@@ -1,0 +1,621 @@
+=== ACO Solver Results ===
+
+Format for each solution:
+1. Timestamp and iteration info
+2. Algorithm parameters
+3. Solution metrics
+4. List of wired segments
+5. Separator line
+
+
+==================================
+New optimization run started at: 2025-03-30 22:38:31
+==================================
+
+Found at: 2025-03-30 22:38:35 (Iteration 1)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=1500
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 12639,00 meters
+Computation Time: 4,17 seconds
+Number of Wired Segments: 17
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+23;23;41;838,00
+30;124;41;440,00
+34;42;25;796,00
+97;4;5;393,00
+100;23;40;440,00
+101;40;25;755,00
+103;30;17;863,00
+118;46;17;654,00
+119;17;30;1060,00
+173;28;34;668,00
+182;68;67;592,00
+194;75;47;1079,00
+197;60;56;510,00
+236;107;106;596,00
+238;104;83;1133,00
+249;83;104;1214,00
+251;106;107;608,00
+
+----------------------------------
+
+Found at: 2025-03-30 22:38:39 (Iteration 2)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=1500
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 12323,00 meters
+Computation Time: 7,71 seconds
+Number of Wired Segments: 16
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+23;23;41;838,00
+34;42;25;796,00
+97;4;5;393,00
+100;23;40;440,00
+101;40;25;755,00
+102;25;30;503,00
+103;30;17;863,00
+117;44;46;687,00
+119;17;30;1060,00
+151;38;34;532,00
+173;28;34;668,00
+182;68;67;592,00
+205;47;75;1116,00
+235;105;107;1305,00
+238;104;83;1133,00
+248;82;83;642,00
+
+----------------------------------
+
+Found at: 2025-03-30 22:39:13 (Iteration 13)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=1500
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 12314,00 meters
+Computation Time: 42,07 seconds
+Number of Wired Segments: 17
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+4;25;42;654,00
+23;23;41;838,00
+34;42;25;796,00
+61;73;75;669,00
+102;25;30;503,00
+103;30;17;863,00
+106;44;43;587,00
+108;25;40;545,00
+114;3;1;353,00
+119;17;30;1060,00
+151;38;34;532,00
+174;34;38;625,00
+236;107;106;596,00
+238;104;83;1133,00
+248;82;83;642,00
+249;83;104;1214,00
+
+----------------------------------
+
+Found at: 2025-03-30 22:39:32 (Iteration 19)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=1500
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 11822,00 meters
+Computation Time: 60,59 seconds
+Number of Wired Segments: 16
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+23;23;41;838,00
+34;42;25;796,00
+100;23;40;440,00
+101;40;25;755,00
+102;25;30;503,00
+103;30;17;863,00
+110;125;2;353,00
+113;4;3;488,00
+119;17;30;1060,00
+151;38;34;532,00
+173;28;34;668,00
+182;68;67;592,00
+205;47;75;1116,00
+235;105;107;1305,00
+238;104;83;1133,00
+253;105;103;380,00
+
+----------------------------------
+
+Found at: 2025-03-30 22:39:38 (Iteration 21)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=1500
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 11245,00 meters
+Computation Time: 67,30 seconds
+Number of Wired Segments: 15
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+34;42;25;796,00
+60;72;73;522,00
+101;40;25;755,00
+103;30;17;863,00
+109;40;23;462,00
+111;2;5;525,00
+119;17;30;1060,00
+174;34;38;625,00
+197;60;56;510,00
+236;107;106;596,00
+238;104;83;1133,00
+248;82;83;642,00
+249;83;104;1214,00
+
+----------------------------------
+
+Found at: 2025-03-30 22:40:19 (Iteration 34)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=1500
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 11069,00 meters
+Computation Time: 107,70 seconds
+Number of Wired Segments: 15
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+100;23;40;440,00
+101;40;25;755,00
+102;25;30;503,00
+109;40;23;462,00
+118;46;17;654,00
+119;17;30;1060,00
+173;28;34;668,00
+174;34;38;625,00
+204;140;41;775,00
+236;107;106;596,00
+238;104;83;1133,00
+248;82;83;642,00
+249;83;104;1214,00
+
+----------------------------------
+
+Found at: 2025-03-30 22:41:23 (Iteration 54)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=1500
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 10187,00 meters
+Computation Time: 171,66 seconds
+Number of Wired Segments: 13
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+34;42;25;796,00
+60;72;73;522,00
+100;23;40;440,00
+101;40;25;755,00
+103;30;17;863,00
+108;25;40;545,00
+119;17;30;1060,00
+199;57;58;240,00
+201;57;56;444,00
+237;106;104;1701,00
+252;107;105;1279,00
+
+----------------------------------
+
+Found at: 2025-03-31 07:20:02 (Iteration 10483)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=1500
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 10174,00 meters
+Computation Time: 31290,70 seconds
+Number of Wired Segments: 13
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+33;38;42;586,00
+101;40;25;755,00
+103;30;17;863,00
+108;25;40;545,00
+109;40;23;462,00
+119;17;30;1060,00
+194;75;47;1079,00
+235;105;107;1305,00
+240;81;22;864,00
+247;22;68;505,00
+251;106;107;608,00
+
+----------------------------------
+
+Found at: 2025-03-31 08:51:27 (Iteration 12343)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=1500
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 10095,00 meters
+Computation Time: 36775,77 seconds
+Number of Wired Segments: 13
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+101;40;25;755,00
+103;30;17;863,00
+108;25;40;545,00
+109;40;23;462,00
+119;17;30;1060,00
+174;34;38;625,00
+194;75;47;1079,00
+234;103;105;380,00
+235;105;107;1305,00
+239;83;81;974,00
+247;22;68;505,00
+
+----------------------------------
+
+
+==================================
+New optimization run started at: 2025-03-31 11:10:32
+==================================
+
+Found at: 2025-03-31 11:10:36 (Iteration 1)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=2000
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 11664,00 meters
+Computation Time: 4,47 seconds
+Number of Wired Segments: 14
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+5;42;38;521,00
+23;23;41;838,00
+34;42;25;796,00
+101;40;25;755,00
+103;30;17;863,00
+104;17;46;1001,00
+109;40;23;462,00
+119;17;30;1060,00
+194;75;47;1079,00
+236;107;106;596,00
+238;104;83;1133,00
+248;82;83;642,00
+249;83;104;1214,00
+
+----------------------------------
+
+Found at: 2025-03-31 11:12:44 (Iteration 33)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=2000
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 11308,00 meters
+Computation Time: 132,18 seconds
+Number of Wired Segments: 15
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+5;42;38;521,00
+23;23;41;838,00
+97;4;5;393,00
+101;40;25;755,00
+103;30;17;863,00
+109;40;23;462,00
+119;17;30;1060,00
+173;28;34;668,00
+194;75;47;1079,00
+236;107;106;596,00
+238;104;83;1133,00
+248;82;83;642,00
+249;83;104;1214,00
+253;105;103;380,00
+
+----------------------------------
+
+Found at: 2025-03-31 11:12:56 (Iteration 36)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=2000
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 10986,00 meters
+Computation Time: 144,22 seconds
+Number of Wired Segments: 15
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+34;42;25;796,00
+61;73;75;669,00
+97;4;5;393,00
+101;40;25;755,00
+103;30;17;863,00
+109;40;23;462,00
+119;17;30;1060,00
+201;57;56;444,00
+206;75;73;417,00
+236;107;106;596,00
+238;104;83;1133,00
+248;82;83;642,00
+249;83;104;1214,00
+
+----------------------------------
+
+Found at: 2025-03-31 11:17:01 (Iteration 97)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=2000
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 10985,00 meters
+Computation Time: 389,30 seconds
+Number of Wired Segments: 15
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+101;40;25;755,00
+103;30;17;863,00
+108;25;40;545,00
+110;125;2;353,00
+119;17;30;1060,00
+173;28;34;668,00
+194;75;47;1079,00
+206;75;73;417,00
+234;103;105;380,00
+236;107;106;596,00
+238;104;83;1133,00
+249;83;104;1214,00
+253;105;103;380,00
+
+----------------------------------
+
+Found at: 2025-03-31 11:20:17 (Iteration 146)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=2000
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 10917,00 meters
+Computation Time: 585,39 seconds
+Number of Wired Segments: 14
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+33;38;42;586,00
+60;72;73;522,00
+97;4;5;393,00
+101;40;25;755,00
+103;30;17;863,00
+109;40;23;462,00
+119;17;30;1060,00
+172;47;28;842,00
+200;58;57;240,00
+235;105;107;1305,00
+238;104;83;1133,00
+249;83;104;1214,00
+
+----------------------------------
+
+Found at: 2025-03-31 11:26:59 (Iteration 248)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=2000
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 10853,00 meters
+Computation Time: 987,42 seconds
+Number of Wired Segments: 13
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+29;125;124;384,00
+101;40;25;755,00
+103;30;17;863,00
+109;40;23;462,00
+119;17;30;1060,00
+173;28;34;668,00
+194;75;47;1079,00
+207;73;72;388,00
+235;105;107;1305,00
+238;104;83;1133,00
+249;83;104;1214,00
+
+----------------------------------
+
+Found at: 2025-03-31 11:44:09 (Iteration 509)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=2000
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 10693,00 meters
+Computation Time: 2017,29 seconds
+Number of Wired Segments: 15
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+34;42;25;796,00
+60;72;73;522,00
+97;4;5;393,00
+100;23;40;440,00
+101;40;25;755,00
+108;25;40;545,00
+117;44;46;687,00
+119;17;30;1060,00
+196;140;60;796,00
+235;105;107;1305,00
+240;81;22;864,00
+251;106;107;608,00
+253;105;103;380,00
+
+----------------------------------
+
+Found at: 2025-03-31 12:18:58 (Iteration 937)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=2000
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 10462,00 meters
+Computation Time: 4107,02 seconds
+Number of Wired Segments: 16
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+34;42;25;796,00
+97;4;5;393,00
+101;40;25;755,00
+103;30;17;863,00
+108;25;40;545,00
+109;40;23;462,00
+111;2;5;525,00
+173;28;34;668,00
+174;34;38;625,00
+183;67;82;361,00
+235;105;107;1305,00
+240;81;22;864,00
+251;106;107;608,00
+254;103;159;150,00
+
+----------------------------------
+
+Found at: 2025-03-31 13:14:56 (Iteration 1449)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=2000
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 10455,00 meters
+Computation Time: 7464,99 seconds
+Number of Wired Segments: 13
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+33;38;42;586,00
+100;23;40;440,00
+101;40;25;755,00
+103;30;17;863,00
+108;25;40;545,00
+119;17;30;1060,00
+194;75;47;1079,00
+236;107;106;596,00
+238;104;83;1133,00
+248;82;83;642,00
+249;83;104;1214,00
+
+----------------------------------
+
+Found at: 2025-03-31 15:48:45 (Iteration 3381)
+
+Algorithm Parameters:
+NUM_ANTS=40, MAX_ITERATIONS=2000
+ALPHA=0,50, BETA=10,00, RHO=0,50
+Q=100,00, TAU_0=0,0100, P_0=0,1000
+
+Solution Metrics:
+Total Length: 10245,00 meters
+Computation Time: 16693,59 seconds
+Number of Wired Segments: 14
+
+Wired Segments:
+ID;StartNode;EndNode;Distance(m)
+1;41;23;704,00
+23;23;41;838,00
+101;40;25;755,00
+103;30;17;863,00
+108;25;40;545,00
+109;40;23;462,00
+119;17;30;1060,00
+174;34;38;625,00
+194;75;47;1079,00
+234;103;105;380,00
+235;105;107;1305,00
+239;83;81;974,00
+247;22;68;505,00
+254;103;159;150,00
+
+----------------------------------
+
