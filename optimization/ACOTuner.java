@@ -14,7 +14,7 @@ public class ACOTuner {
     private final double chargingRate;
    
     private static final int REPLICATIONS = 10;
-   
+
 private int bestNumAnts = 40;
     private int bestMaxIterations = 1500;
     private double bestAlpha = 0.5;

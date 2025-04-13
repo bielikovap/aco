@@ -25,25 +25,35 @@ public class Turnus {
             int currentUsekIndex = usekyIndex.get(i);
             Usek currentUsek = useky.get(currentUsekIndex);
             double segmentLength = currentUsek.getDistance();
-            
             double consumption = segmentLength * consumptionPerMeter;
+            
+            double predictedBattery = currentBattery - consumption;
+            
+            if (predictedBattery < maxBatteryCapacity * 0.2) {
+                return false;
+            }
+            
+            if (predictedBattery <= 0) {
+                return false;
+            }
             
             if (wiringConfiguration.get(currentUsekIndex)) {
                 double charging = segmentLength * chargingRatePerMeter;
                 currentBattery = Math.min(maxBatteryCapacity, currentBattery + charging);
                 distanceFromLastCharge = 0;
             } else {
-                currentBattery -= consumption;
+                currentBattery = predictedBattery;
                 distanceFromLastCharge += segmentLength;
             }
             
-            if (currentBattery <= 0) {
-                return false;
-            }
-            double maxDistance = maxBatteryCapacity / consumptionPerMeter * 0.8; 
+            double maxDistance = maxBatteryCapacity / consumptionPerMeter * 0.8;
             if (distanceFromLastCharge > maxDistance) {
                 return false;
             }
+        }
+        
+        if (currentBattery < maxBatteryCapacity * 0.2) {
+            return false;
         }
         
         return true;
